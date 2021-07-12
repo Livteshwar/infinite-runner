@@ -74,7 +74,7 @@ spawnDown();
   
   textSize(24)
 fill("black")
-text("Lifetime: "+boy.lifetime,300,100)
+text("Lifetime: "+boy.lifetime,50,50)
 }
 else if(gamestate=="end"){
     gameover.visible=true
