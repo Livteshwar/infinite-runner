@@ -62,7 +62,7 @@ if(upGroup.isTouching(boy)){
     boy.lifetime = boy.lifetime-120
   }
 
-if(boy.lifetime==1){
+if(boy.lifetime<=1){
 gamestate="end"
 }
 
