@@ -34,9 +34,7 @@ gameover.addImage(gameoverImg);
 gameover.scale=0.2;
 gameover.visible=false
 
-textSize(24)
-fill("black")
-text("Lifetime: "+boy.lifetime,300,100)
+
 }
 
 function draw() {
@@ -73,6 +71,10 @@ spawnUp();
 spawnDown();
 
  drawSprites();
+  
+  textSize(24)
+fill("black")
+text("Lifetime: "+boy.lifetime,300,100)
 }
 else if(gamestate=="end"){
     gameover.visible=true
