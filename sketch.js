@@ -53,15 +53,20 @@ if (keyDown("down")){
 }
 
 
-if(upGroup.isTouching(boy)){
-    upGroup.destroyEach();
-    boy.lifetime = boy.lifetime+180
-  }
-  if(downGroup.isTouching(boy)){
-    downGroup.destroyEach();
-    boy.lifetime = boy.lifetime-120
-  }
 
+ for(var i=0;i<upGroup.length;i++){
+  if(upGroup.isTouching(boy)){
+ upGroup.get(i).destroy();
+   boy.lifetime = boy.lifetime+180
+  }
+ }
+
+    for(var u=0;u<downGroup.length;u++){
+     if(downGroup.isTouching(boy)){
+ downGroup.get(u).destroy();
+        boy.lifetime = boy.lifetime-120
+  }
+ }
 if(boy.lifetime<=1){
 gamestate="end"
 }
@@ -69,8 +74,6 @@ gamestate="end"
 spawnUp();
 
 spawnDown();
-
- drawSprites();
   
   textSize(24)
 fill("black")
@@ -78,7 +81,11 @@ text("Lifetime: "+boy.lifetime,50,50)
 }
 else if(gamestate=="end"){
     gameover.visible=true
+    upGroup.destroyEach();
+    downGroup.destroyEach();
+    boy.destroy();
 }
+ drawSprites();
 }
 
 function spawnUp(){
